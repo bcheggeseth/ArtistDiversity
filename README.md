@@ -8,4 +8,4 @@ Suggestions:
 
 [ ] I really like the graph about gender distribution, but can we clean it up a little (x-axis label seems weird, maybe better to have proportions there going from 0% to 100%. Order of listing museums
 
-[X] Make the sidebar less wide so ther eis more room for displaying the data table.
+[x] Make the sidebar less wide so there is more room for displaying the data table.
