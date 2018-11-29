@@ -26,7 +26,7 @@ shinyUI(
       value="SI",       
       sidebarLayout(
         sidebarPanel(
-          tags$b("The survey instrument to the right was used by Mechanical Turk works provide crowdsourced information on a random sample of thousands of individual, identifiable artists in various U.S. museums."),
+          tags$b("The survey instrument to the right was used by Mechanical Turk workers to provide information on a random sample of thousands of records scrapped from various U.S. museums."),
           br(),br(),
           width = 4), #end second sidebarpanel
         mainPanel(
