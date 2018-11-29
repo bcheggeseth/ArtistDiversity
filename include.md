@@ -21,8 +21,8 @@ this artist’s gender")
 
 1. The artist listed above might be a unique, identifiable individual, or it might be a collective of artists, a company, an
 anonymous listing, or something else that prevents identification of an individual. Please indicate which is the case.
-- The artist is a unique, identifiable individual
-- The artist is not a unique, identifiable individual (If you choose this option, please also choose it whenever it is
+  - The artist is a unique, identifiable individual
+  - The artist is not a unique, identifiable individual (If you choose this option, please also choose it whenever it is
 offered below.)
 
 2. What is the gender of the artist? In answering this question, you might use the artist?s name, and/or any pictures you
