@@ -34,7 +34,7 @@ shinyUI(
         ) #end second main panel
       ) #end sidebarLayout second panel
     ), #end tabPanel second panel
-    tabPanel(title="Graphs",
+    tabPanel(title="Museum Summaries",
              value="Graphs",       
              sidebarLayout(
                sidebarPanel(
