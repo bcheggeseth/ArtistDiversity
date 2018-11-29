@@ -16,7 +16,7 @@ shinyUI(
                  br(),br(),
                  tags$em("Not Inferred values indicate that we were not able to confidently determine the value based on crowdsourcing approach."),
                  awesomeCheckbox("filter", "Allow subsetting?", value=TRUE),
-                 width = 4), #end first sidebarpanel
+                 width = 3), #end first sidebarpanel
                mainPanel(
                  DTOutput('artistdata'), tags$em('Note that the artist name is scraped from the web and is not a cleaned version due to character encodings.')
                ) #end first main panel
@@ -28,7 +28,7 @@ shinyUI(
         sidebarPanel(
           tags$b("The survey instrument to the right was used by Mechanical Turk workers to provide information on a random sample of thousands of records scrapped from various U.S. museums."),
           br(),br(),
-          width = 4), #end second sidebarpanel
+          width = 3), #end second sidebarpanel
         mainPanel(
           includeMarkdown("include.md")
         ) #end second main panel
@@ -47,7 +47,7 @@ shinyUI(
                  awesomeCheckbox("unknownfilter", "Exclude artists with not inferred values", value=TRUE),
                  #awesomeCheckboxGroup("order", "Prefer bar plots", value=FALSE)
                  awesomeCheckbox("barplot", "Prefer bar plots", value=FALSE),
-                width = 4), #end third sidebarPanel
+                width = 3), #end third sidebarPanel
                mainPanel(
                  plotOutput("demoplot", height = 700)
                ) #end third mainPanel
