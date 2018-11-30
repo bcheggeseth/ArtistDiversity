@@ -3,8 +3,9 @@ library(DT)
 library(dplyr)
 library(tidyr)
 library(ggmosaic)
+library(markdown)
 
-df <- read.csv("artistdata.csv")
+df <- read.csv('artistdata.csv')
 
 levels(df$gender) = c('Man','Woman')
 df$gender = as.character(df$gender)
