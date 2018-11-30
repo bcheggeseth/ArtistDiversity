@@ -4,6 +4,7 @@ library(dplyr)
 library(tidyr)
 library(ggmosaic)
 library(markdown)
+library(viridis)
 
 df <- read.csv('artistdata.csv')
 
@@ -61,7 +62,7 @@ shinyServer(function(input, output) {
     Levels = levels(eval(parse(text=paste0('dftmp$',input$demovar))))
     barplot <- ggplot(data=dftmp, aes_string(x = input$demovar)) + 
       geom_bar(aes(y = ..prop.., fill = factor(..x..), group = 1)) + facet_wrap(~museum, ncol=3) +
-      scale_fill_discrete(name=tools::toTitleCase(input$demovar),
+      scale_fill_viridis_d(name=tools::toTitleCase(input$demovar),
                           breaks=1:length(Levels),
                           labels=Levels) +
       xlab(tools::toTitleCase(input$demovar)) +
@@ -69,17 +70,17 @@ shinyServer(function(input, output) {
       coord_flip() +
       theme_classic(base_size = 18) +
       theme(axis.text.x = element_text(angle = 0, hjust = 1),axis.text.y = element_text(angle = 0, hjust = 1)) + 
-      theme(legend.position="top") 
+      theme(legend.position="top")
     
     mosaicplot <- ggplot(data=dftmp) + 
       geom_mosaic(aes_string(weight = "1", x = paste0('product(', input$demovar,', museum)'), fill = input$demovar)) +
-      scale_fill_discrete(name=tools::toTitleCase(input$demovar)) +
+      scale_fill_viridis_d(name=tools::toTitleCase(input$demovar)) +
       xlab('Museum') +
       ylab('Proportion') +
       coord_flip() +
       theme_classic(base_size = 18) +
       theme(axis.text.x = element_text(angle = 0, hjust = 1),axis.text.y = element_text(angle = 0, hjust = 1)) +
-      theme(legend.position="top")
+      theme(legend.position="top") 
       
       
     ifelse(input$barplot,return(barplot),return(mosaicplot))
