@@ -36,6 +36,7 @@ shinyUI(
                  awesomeCheckbox("unknownfilter", "Exclude artists with not inferred values", value=TRUE),
                  #awesomeCheckboxGroup("order", "Prefer bar plots", value=FALSE)
                  awesomeCheckbox("barplot", "Prefer bar plots", value=FALSE),
+                 awesomeCheckbox("diversity", "Order museums by diversity clusters (default is by collection habit clusters)", value=FALSE),
                 width = 3), #end third sidebarPanel
                mainPanel(
                  plotOutput("demoplot", height = 700)
