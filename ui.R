@@ -2,6 +2,7 @@ library(shiny)
 library(DT)
 library(ggplot2)
 library(shinyWidgets)
+library(markdown)
 
 shinyUI(
   navbarPage(
@@ -22,19 +23,7 @@ shinyUI(
                ) #end first main panel
              ) #end sidebarLayout first panel
     ), #end tabPanel first panel
-    tabPanel(title="Survey Instrument",
-      value="SI",       
-      sidebarLayout(
-        sidebarPanel(
-          tags$b("The survey instrument to the right was used by Mechanical Turk workers to provide information on a random sample of thousands of records scrapped from various U.S. museums."),
-          br(),br(),
-          width = 3), #end second sidebarpanel
-        mainPanel(
-          includeMarkdown("include.md")
-        ) #end second main panel
-      ) #end sidebarLayout second panel
-    ), #end tabPanel second panel
-    tabPanel(title="Museum Summaries",
+    tabPanel(title="Graphs",
              value="Graphs",       
              sidebarLayout(
                sidebarPanel(
@@ -52,6 +41,18 @@ shinyUI(
                  plotOutput("demoplot", height = 700)
                ) #end third mainPanel
             ) #end sidebarLayout third panel
-          ) #end tabPanel third panel
+          ), #end tabPanel third panel
+        tabPanel(title="Survey Instrument",
+      value="SI",       
+      sidebarLayout(
+        sidebarPanel(
+          tags$b("The survey instrument to the right was used by Mechanical Turk workers to provide information on a random sample of thousands of records scrapped from various U.S. museums."),
+          br(),br(),
+          width = 3), #end second sidebarpanel
+        mainPanel(
+          includeMarkdown("include.md")
+        ) #end second main panel
+      ) #end sidebarLayout second panel
+    ) #end tabPanel second panel
     ) #end navBar
   ) #end ui
