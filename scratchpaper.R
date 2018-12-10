@@ -1,20 +1,21 @@
+library(dplyr)
 gen <- df %>%
-  filter(gender != 'Not Inferred') %>%
+  dplyr::filter(gender != 'Not Inferred') %>%
   count(museum,gender) %>%
   group_by(museum) %>%
   mutate(relfreq=n/sum(n)) #%>%
-  #filter(gender == 'Woman')
+  #dplyr::dplyr::filter(gender == 'Woman')
 
 gen <- gen %>%
   select(gender,relfreq) %>%
   spread(gender,relfreq) 
 
 eth <- df %>%
-  filter(ethnicity != 'Not Inferred') %>%
+  dplyr::filter(ethnicity != 'Not Inferred') %>%
   count(museum,ethnicity) %>%
   group_by(museum) %>%
   mutate(relfreq=n/sum(n)) #%>%
-  #filter(ethnicity != 'White')
+  #dplyr::dplyr::filter(ethnicity != 'White')
 
 eth <- eth %>%
   select(ethnicity,relfreq) %>%
@@ -24,11 +25,11 @@ eth <- eth %>%
 
 
 geo <- df %>%
-  filter(nationality != 'Not Inferred') %>%
+  dplyr::filter(nationality != 'Not Inferred') %>%
   count(museum,nationality) %>%
   group_by(museum) %>%
   mutate(relfreq=n/sum(n)) #%>%
-  #filter(nationality != 'North American')
+  #dplyr::dplyr::filter(nationality != 'North American')
 
 geo <- geo %>%
   select(nationality,relfreq) %>%
@@ -36,11 +37,11 @@ geo <- geo %>%
   replace_na(list(Africa = 0,`Asia/Pacific` = 0,`West Asia` = 0,`Latin American/Caribbean` = 0,Europe = 0))
 
 byr <- df %>% 
-  filter(birthyear != 'Not Inferred') %>%
+  dplyr::filter(birthyear != 'Not Inferred') %>%
   count(museum,birthyear) %>%
   group_by(museum) %>%
   mutate(relfreq=n/sum(n)) #%>%
-  #filter(birthyear != 'Before 500')
+  #dplyr::dplyr::filter(birthyear != 'Before 500')
 
 byr <- byr %>%
   select(birthyear,relfreq) %>%

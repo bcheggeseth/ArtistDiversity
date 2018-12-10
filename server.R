@@ -1,13 +1,13 @@
 library(shiny)
 library(DT)
-library(dplyr)
 library(tidyr)
+library(dplyr)
 library(ggmosaic)
 library(markdown)
 library(viridis)
 
 df <- read.csv('artistdata.csv')
-source('scratchpaper.R')
+
 
 levels(df$gender) = c('Man','Woman')
 df$gender = as.character(df$gender)
@@ -40,6 +40,7 @@ MLevels = levels(df$museum)
 
 #WMAA, MOMA, MOCA, SFMOMA, DIA, NGA,MFAB, MMA, PMA, AIC, NAMA< RISDM, YUAG, LACMA, HMA, DAM, DMA, MFAH
 #MOCA, WMAA, DAM, MOMA, LACMA, MFAB, RISDM, YUAG, HMA, dia, gna, nama, mma, pma, aic, sfmoma, dma, mfah
+source('scratchpaper.R')
 
 
 shinyServer(function(input, output) {
@@ -60,8 +61,8 @@ shinyServer(function(input, output) {
   output$demoplot <- renderPlot({
     dftmp = df
     if(input$unknownfilter){
-      dftmp = dftmp %>% filter_(paste0(input$demovar,"!= 'Not Inferred'")) %>% droplevels()
-    }
+      eval(parse(text = paste0("dftmp = dftmp %>% dplyr::filter(",input$demovar,"!= 'Not Inferred') %>% droplevels()")))
+   }
     if(input$diversity){
       dftmp$museum = factor(dftmp$museum,levels = MLevels[divOrd])
     }else{dftmp$museum = factor(dftmp$museum,levels = MLevels[colOrd])}
