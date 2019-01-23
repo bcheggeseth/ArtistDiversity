@@ -32,7 +32,7 @@ shinyUI(
           tags$em("Not Inferred values indicate that we were not able to confidently determine the value based on crowdsourcing approach."),
           br(),br(),
           selectInput("demovar", "Choose a Demographic Variable:", choices=list("Gender"= "gender", "Ethnicity"="ethnicity", 
-            "Birth Year"="birthyear", "Nationality"="nationality"),selected='Gender'),
+            "Birth Year"="birthyear", "Geographic Origin"="nationality"),selected='Gender'),
           awesomeCheckbox("unknownfilter", "Exclude artists with not inferred values", value=TRUE),
           #awesomeCheckboxGroup("order", "Prefer bar plots", value=FALSE)
           awesomeCheckbox("barplot", "Prefer bar plots", value=FALSE),

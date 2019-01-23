@@ -5,9 +5,9 @@ account: bheggeseth
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 611920
-bundleId: 1752851
+bundleId: 1753362
 url: https://bheggeseth.shinyapps.io/ArtistDiversity/
-when: 1544454347.64731
+when: 1544467893.74888
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: scratchpaper.R

@@ -45,7 +45,7 @@ shinyServer(function(input, output) {
     
     output$artistdata <- renderDT(
       df[,c('museum','artist','gender','ethnicity','nationality','birthyear')] %>% arrange(museum,artist), 
-      colnames = c( 'Museum','Artist', 'Gender', 'Ethnicity', 'Regional Origin', 'Birth Year'),
+      colnames = c( 'Museum','Artist', 'Gender', 'Ethnicity', 'Geographic Origin', 'Birth Year'),
       rownames = FALSE,
       extensions = 'FixedHeader',
       filter = filters,
